@@ -50,7 +50,7 @@ const CreatePost = () => {
        
     }
     const handleSurpriseMe=()=>{
-        console.log("click")
+        
        const randomPrompt =getRandomPrompt(form.prompt);
        setForm({...form,prompt: randomPrompt})
     }

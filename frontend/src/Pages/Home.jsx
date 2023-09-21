@@ -3,7 +3,7 @@ import { Loader,FormField,Card } from '../components';
 
 const RenderCards =({data, title})=>{
     if(data?.length>0){
-        console.log({data})
+        
         return data.map((post)=>
         <Card key={post._id}{...post}></Card>
         )
@@ -58,16 +58,16 @@ const Home = () => {
                 return item.name.toLowerCase().includes(searchText.toLowerCase())||item.prompt.toLowerCase().includes(searchText.toLowerCase());
             })
             setSearchedResult(seacrchResult)
-            console.log(seacrchResult)
+            
         },500))
         
       }
     
   return (
     <section className='max-w-7xl mx-auto'>
-        <div>
+        <div className='flex flex-col justify-center items-center'>
             <h1 className='font-extrabold text-black text-[32px]'>The Community ShowCase</h1>
-            <p className='mt-2 text-[#665e75] text-[18px] max-w-[500px]'> Browse Through The Collection of Imaginative and Visually Stunnimg images by dall-e ai</p>
+            <p className='mt-2 text-[#665e75] text-[18px] max-w-[500px] text-center'> Browse Through The Collection of Imaginative and Visually Stunnimg images by dall-e ai</p>
         </div>
         <div className='mt-16'>
             <FormField labelName='search' type='text' name="text" placeholder="seacrh here.."  value={searchText} handleChange={handleSearchChange}/>
